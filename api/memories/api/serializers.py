@@ -4,7 +4,9 @@ from rest_framework import serializers
 
 class UserSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
-    password = serializers.CharField(write_only=True, required=False)
+    password = serializers.CharField(write_only=True, required=True)
+    first_name = serializers.CharField(required=True)
+    last_name = serializers.CharField(required=True)
 
     class Meta:
         model = User
@@ -22,6 +24,13 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
+    
+    def validate_password(self, value):
+        if not value:
+            raise serializers.ValidationError("The password cannot be ampty.")
+        if len(value) < 8:
+            raise serializers.ValidationError("The password must have at least 8 characters.")
+        return value
 
 
 class MemorySerializer(serializers.ModelSerializer):
