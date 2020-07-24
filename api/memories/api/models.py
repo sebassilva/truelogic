@@ -14,7 +14,7 @@ class TrackedModel(models.Model):
 class Memory(TrackedModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     description = models.CharField(null=False, blank=False, max_length=140)
-    rating = models.IntegerField(null=False, blank=False, max_length=50)
+    rating = models.IntegerField(null=False, blank=False)
     latitude = models.DecimalField(max_digits=9, decimal_places=6, blank=False, null=False)
     longitude = models.DecimalField(max_digits=9, decimal_places=6, blank=False, null=False)
 
