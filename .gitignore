@@ -109,4 +109,4 @@ media/
 !**/migrations
 !**/migrations/__init__.py
 
-api/apienv/
+api/venv/
