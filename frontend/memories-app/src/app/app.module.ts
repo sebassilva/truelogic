@@ -11,6 +11,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MemoriesComponent } from './memories/memories.component';
 import { MapComponent } from './map/map.component';
+import { MemoryListComponent } from './memory-list/memory-list.component';
+import { MemoryCreateComponent } from './memory-create/memory-create.component';
+
+import { GoogleMapsModule } from '@angular/google-maps'
+
 
 
 @NgModule({
@@ -20,14 +25,18 @@ import { MapComponent } from './map/map.component';
     NavbarComponent,
     RegisterComponent,
     MemoriesComponent,
-    MapComponent
+    MapComponent,
+    MemoryListComponent,
+    MemoryCreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleMapsModule,
+
 
   ],
   providers: [],
