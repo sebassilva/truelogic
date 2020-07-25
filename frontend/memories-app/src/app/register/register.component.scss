@@ -1,0 +1,23 @@
+.wrapper{
+  padding:0;
+  margin:0;
+  font-family: 'Dosis', sans-serif;
+  overflow-x:hidden;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  height:95vh;
+}
+
+.btn-primary{
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  border:0px;
+  top:10px;
+  position: relative;
+}
+
+.vertical-center{
+  margin: auto;
+}
+
+.register-btn a{
+  color: #ff512f;
+}
