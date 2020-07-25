@@ -36,28 +36,28 @@ export class ApiService {
       return this.http.post(url, data, this.options as any);
     }
 
-    getUsers(): Observable<any> {
+    register(data): Observable<any> {
       const url = `${this.BASE_URL}/user/`;
+      return this.http.post(url, data, this.options as any);
+    }
+
+    getMemories(): Observable<any> {
+      const url = `${this.BASE_URL}/memory/`;
       return this.http.get(url, this.getAuthHeaders() as any);
     }
 
-    getUserDetail(id: number): Observable<any> {
-      const url = `${this.BASE_URL}/user/${id}/`;
+    getMemory(id: number): Observable<any> {
+      const url = `${this.BASE_URL}/memory/${id}/`;
       return this.http.get(url, this.getAuthHeaders() as any);
     }
 
-    postUserDetail(user): Observable<any> {
-      const url = `${this.BASE_URL}/user/`;
-      return this.http.post(url, user, this.getAuthHeaders() as any);
+    postMemory(memory): Observable<any> {
+      const url = `${this.BASE_URL}/memory/`;
+      return this.http.post(url, memory, this.getAuthHeaders() as any);
     }
 
-    putUserDetail(id, user): Observable<any> {
-      const url = `${this.BASE_URL}/user/${id}/`;
-      return this.http.put(url, user, this.getAuthHeaders() as any);
-    }
-
-    deleteUserDetail(id: number): Observable<any> {
-      const url = `${this.BASE_URL}/user/${id}/`;
+    deleteMemory(id: number): Observable<any> {
+      const url = `${this.BASE_URL}/memory/${id}/`;
       return this.http.delete(url, this.getAuthHeaders() as any);
     }
 }

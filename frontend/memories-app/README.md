@@ -1,27 +1,76 @@
-# MemoriesApp
+# Memories
+This project is divided in two sub-projects. The first one is the Angular 9 project which is under /frontend folder. 
+The second one is the dJango 3.0 project which is under /api folder. This uses Django Rest Framework and SQLite. 
+I decided to put both projects on the same folder to use only one git repo.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Memories frontend
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Frontend server
+First we have to install the modules: 
+```shell
+cd frontend/memories-app/
+npm install
+```
 
-## Build
+To serve the project run: 
+```shell
+ng serve
+```
+which will open a connection on: 
+`http://localhost:4200/`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+You can change the Google API Key on the index.html file.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##  Backend
+First make sure you are using python >= 3.6.
 
-## Running end-to-end tests
+```shell
+python --version
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Create a virtual environment 
+```shell
+py -m venv apienv
 
-## Further help
+```
+Activate your virutal environment. You should see something like (apienv) on your terminal. 
+If you are using windows: 
+```shell
+./apienv\Scripts\activate.bat
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+for linux linux 
+```shell
+source apienv/bin/activate
+```
+
+Install all libraries:
+```shell
+pip install -r requirements.txt
+```
+
+Run the migrations wich will create the database structure
+```shell
+python manage.py makemigrations
+```
+Run the server, 
+django will run on port 8000 of localhost.
+
+```shell
+python manage.py runserver
+```
+
+Fill the information. 
+
+## Considerations
+- For production purposes we coould use a more robust database such as PostgreSQL
+- Improve the design of the site
+- Set the variables on .env files or use a different service to provide secret keys
+
+
+
+Estimated development time: 5 horas.
