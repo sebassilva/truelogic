@@ -1,0 +1,33 @@
+<div class="container" [hidden]="editView">
+  <div class="row">
+    <div class="col-12">
+      <div class="title">
+        <h1>My memories</h1>
+        <button
+        (click)="newMemory()"
+        type="button"
+        class="btn btn-outline-success">+</button>
+      </div>
+    </div>
+    <div
+    *ngFor="let memory of memories"
+    class="col-12">
+
+        <div class="card" >
+          <div class="card-body">
+            <h5 class="card-title">{{memory.title}}</h5>
+            <p class="card-text">{{memory.description}}</p>
+            <button
+            (click)="removeMemory(memory.id)"
+            type="button" class="btn btn-outline-warning">Remove</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" [hidden]="!editView">
+  <app-memory-create
+  (hide)="changeHide($event)"
+  ></app-memory-create>
+</div>

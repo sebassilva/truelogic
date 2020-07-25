@@ -1,1 +1,12 @@
-<p>memories works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8">
+      <app-map [memories]="memories"></app-map>
+    </div>
+    <div class="col-4">
+      <app-memory-list
+      (memoryChange)="memoryListChangeevent($event)"
+      [memories]="memories"></app-memory-list>
+    </div>
+  </div>
+</div>

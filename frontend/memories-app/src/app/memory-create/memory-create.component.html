@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="title">
+        <h1>Create Memory</h1>
+        <button
+        (click)="back()"
+        type="button"
+        class="btn btn-outline-success"><</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card-body">
+        <form
+        [formGroup]="memoryForm"
+        (ngSubmit)="onSubmit()"
+        >
+          <div class="form-group">
+            <label for="exampleInputEmail1">Title</label>
+            <input
+            formControlName="title"
+            type="text" class="form-control"
+            aria-describedby="emailHelp"
+            placeholder="beautiful sunshine..."
+            required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Description</label>
+            <input
+            formControlName="description"
+            type="description"
+            class="form-control"
+            placeholder="I was walking down the hill when..."
+            required>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!memoryForm.valid">Remember</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
