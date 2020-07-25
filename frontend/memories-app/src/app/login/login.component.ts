@@ -27,14 +27,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void{
-    console.log(this.loginForm.valid)
     if ( !this.loginForm.valid ){
       return;
     }
-    console.log("holaa")
     this.api.login(this.loginForm.value).subscribe( data => {
       localStorage.setItem('user', JSON.stringify( data ));
-      if (data.access){
+      if ( data.access ){
         // If login is correct, navigate to users
         this.router.navigate(['/memories']);
       }
